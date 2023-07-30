@@ -61,6 +61,10 @@ export default function PaywallScreen() {
                     </Text>
                 </View>
             </View>
+            {/* monthly subscribe */}
+            
+            {/* annual subscribe */}
+            {/* restore purchase */}
         </View>
     </ScrollView>
   )
