@@ -4,13 +4,17 @@ import tw from 'twrnc'
 import { Touchable } from 'react-native';
 import {Ionicons} from '@expo/vector-icons'
 import ActionRow from '../components/ActionRow';
+import { useNavigation } from '@react-navigation/native';
 
 export default function HomeScreen() {
+    const navigation = useNavigation()
   return (
     <SafeAreaView style={tw`relative flex-1`}>
     <ScrollView>
       {/* PRO/Upgrade */}
-      <TouchableOpacity style={tw`absolute z-50 top-5 right-5 items-center`}>
+      <TouchableOpacity style={tw`absolute z-50 top-5 right-5 items-center`}
+        onPress={() => navigation.navigate('Paywall')}
+      >
         <Ionicons name="person-circle" size={32} color="orange" />
         <Text style={tw`text-orange-500 text-center`}>PRO/Upgrade</Text>
       </TouchableOpacity>
@@ -63,10 +67,10 @@ export default function HomeScreen() {
       />
         <ActionRow
         title="Create Challange"
-        icon="trophy-outline"
+        icon="add-circle-outline"
         screen="Demo"
         requiresPro
-        color="yellow"
+        color="gray"
         />
       </View>
     </ScrollView>
