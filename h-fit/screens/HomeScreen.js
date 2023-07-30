@@ -47,7 +47,6 @@ export default function HomeScreen() {
         title="Connect with Friends"
         icon="share-social"
         screen="Demo"
-        vertical
         color="lightblue"
       />
       {/*actionrow */}
