@@ -1,14 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import tw from 'twrnc'
+import {NavigationContainer} from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginScreen from './screens/LoginScreen'
+import RegisterScreen from './screens/RegisterScreen'
+import HomeScreen from './screens/HomeScreen'
+
+const Stack = createNativeStackNavigator;
 
 export default function App() {
   return (
-    <SafeAreaView style={tw`flex-1 bg-red-500`}>
-    <View style={tw`text-5xl bg-red-500`}>
-      <Text style={tw`text-lg py-6`}>Welcome to H-Fit</Text>
-    </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen}/>
+        <Stack.Screen name="Register" component={RegisterScreen}/>
+        <Stack.Screen name="Home" component={HomeScreen}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
